@@ -1,0 +1,6 @@
+com\adservio\tutu\entity\ElementCourseBean.class
+com\adservio\tutu\entity\RetourRechercheBean.class
+com\adservio\tutu\action\AfficherListeCoursesAction.class
+com\adservio\tutu\action\HelloWorldAction.class
+com\adservio\tutu\dao\ListeCoursesDAO.class
+com\adservio\tutu\form\HelloWorldForm.class

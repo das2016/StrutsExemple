@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="helloWorldForm" type="com.adservio.tutu.form.HelloWorldForm"></form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/page/helloWorld" name="helloWorldForm"
+			type="com.adservio.tutu.action.HelloWorldAction">
+			<forward name="succes" path="/page/helloWorld.jsp"></forward>
+		</action>
+
+		<!-- Indique la correspondance entre une action sous forme d'URL (ici /AfficherListeCourses.do), 
+			une classe (ici com.adservio.tutu.action.AfficherListeCoursesAction.AfficherListeCoursesAction) -->
+
+		<action path="/page/AfficherListeCourses" 
+			type="com.adservio.tutu.action.AfficherListeCoursesAction">
+			<forward name="succes" path="/page/listeCourses.jsp" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="resources"></message-resources>
+
+</struts-config>
