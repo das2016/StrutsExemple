@@ -6,12 +6,20 @@
 <struts-config>
 
 	<form-beans type="org.apache.struts.action.ActionFormBean">
+		<!-- HelloWorld Form -->
 		<form-bean name="helloWorldForm" type="com.adservio.tutu.form.HelloWorldForm"></form-bean>
+		<!--Login Form -->
 		<form-bean name="loginForm" type="com.adservio.tutu.form.LoginForm"></form-bean>
+		<!-- Creation Form - -->
 		<form-bean name="creationForm"
 			type="org.apache.struts.validator.DynaValidatorForm">
 			<form-property name="libelle" type="java.lang.String" />
 			<form-property name="quantite" type="java.lang.String" />
+		</form-bean>
+		<!-- Supression Form -->
+		<form-bean name="suppressionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
 		</form-bean>
 	</form-beans>
 
@@ -28,6 +36,20 @@
 			type="com.adservio.tutu.action.CreerElementCoursesAction" scope="request"
 			validate="true" attribute="bean" input="/page/AfficherCreationElementCourses.do">
 			<forward name="succes" path="/page/AfficherCreationElementCourses.do" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+		<action path="/page/AfficherSuppressionElementCourses" name="suppressionForm"
+			type="com.adservio.tutu.action.AfficherListeCoursesAction" scope="request"
+			validate="false" attribute="bean">
+			<forward name="succes" path="/page/suppression.jsp" />
+			<forward name="erreur" path="/page/error/erreur.jsp" />
+		</action>
+
+		<action path="/page/SupprimerSuppressionElementCourses" name="suppressionForm"
+			type="com.adservio.tutu.action.SupprimerElementCoursesAction" scope="request"
+			validate="false" attribute="bean">
+			<forward name="succes" path="/page/AfficherSuppressionElementCourses.do" />
 			<forward name="erreur" path="/page/error/erreur.jsp" />
 		</action>
 
@@ -52,7 +74,7 @@
 		</action>
 	</action-mappings>
 
-	<message-resources parameter="resources"></message-resources>
+	<message-resources parameter="resources_fr"></message-resources>
 
 	<!-- ========== Validation des formulaires =========================== -->
 	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">

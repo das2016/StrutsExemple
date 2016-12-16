@@ -1,3 +1,4 @@
+com\adservio\tutu\action\SupprimerElementCoursesAction.class
 com\adservio\tutu\form\LoginForm.class
 com\adservio\tutu\action\CreerElementCoursesAction.class
 com\adservio\tutu\entity\ElementCourseBean.class

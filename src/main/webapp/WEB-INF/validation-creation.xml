@@ -5,13 +5,13 @@
 
 <form-validation>
 	<formset>
-		<form name="/page/CreerCreationElementCourses.do">
+		<form name="/page/CreerCreationElementCourses">
 			<!-- Contraintes sur le champs libelle : required -->
 			<field property="libelle" depends="required">
 				<msg name="required" key="creation.libelle.error.required" />
 			</field>
 			<!-- Contraintes sur le champ quantite : required et numerique -->
-			<field property="quantite" depends="required, integer">
+			<field property="quantite" depends="required,integer">
 				<msg name="required" key="creation.quantité.error.required" />
 				<msg name="integer" key="creation.quantité.error.integer" />
 			</field>

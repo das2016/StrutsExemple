@@ -32,7 +32,6 @@ public class CreerElementCoursesAction extends Action {
 	 */
 	public ActionForward execute(final ActionMapping pMapping, ActionForm pForm, final HttpServletRequest pRequete,
 			final HttpServletResponse pReponse) {
-		try {
 			// Récupère les informations du formulaire
 			final DynaValidatorForm lForm = (DynaValidatorForm) pForm;
 			final String lLibelle = lForm.getString("libelle");
@@ -54,9 +53,6 @@ public class CreerElementCoursesAction extends Action {
 				// S'il y a des erreurs, on retourne le forward "erreur"
 				return pMapping.findForward("erreur");
 			}
-		} catch (NumberFormatException exception) {
-			return pMapping.findForward("erreur");
-		}
 
 	}
 }

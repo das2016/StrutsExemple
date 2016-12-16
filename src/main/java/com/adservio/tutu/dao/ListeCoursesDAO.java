@@ -94,4 +94,26 @@ public class ListeCoursesDAO {
 		}
 	}
 
+	/**
+	 * * Supprime un nouvel élément dans la liste des courses * @param pIdObjet
+	 * Identifiant de l'élément * @return Erreur s'il y a lieu
+	 */
+	public String supprimerElementCourse(final Long pIdObjet) {
+		try {
+			final Context lContext = new InitialContext();
+			final DataSource lDataSource = (DataSource) lContext.lookup(NOM_RESOURCE_JDBC);
+			final Connection lConnection = lDataSource.getConnection();
+			// Insertion du nouvel enregistrement
+			final PreparedStatement lPreparedStatementCreation = lConnection
+					.prepareStatement("DELETE FROM LISTECOURSES WHERE IDOBJET = ?");
+			lPreparedStatementCreation.setLong(1, pIdObjet);
+			lPreparedStatementCreation.executeUpdate();
+			return null;
+		} catch (NamingException e) {
+			return "NamingException : " + e.getMessage();
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		}
+	}
+
 }
