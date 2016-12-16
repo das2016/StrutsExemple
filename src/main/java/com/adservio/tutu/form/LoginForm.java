@@ -17,8 +17,8 @@ public class LoginForm extends ActionForm {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String username;
-	private String password;
+	private String nomUtilisateur;
+	private String mdpUtilisateur;
 
 	/*
 	 * Constructor
@@ -41,41 +41,41 @@ public class LoginForm extends ActionForm {
 	 * Reset Login info
 	 */
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
-		username = null;
-		password = null;
+		nomUtilisateur = null;
+		mdpUtilisateur = null;
 	}
 
 	/*
 	 * Getter and setter
 	 */
+
 	/**
-	 * @return the username
+	 * @return the nomUtilisateur
 	 */
-	public String getUsername() {
-		return username;
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
 	}
 
 	/**
-	 * @param username
-	 *            the username to set
+	 * @param nomUtilisateur
+	 *            the nomUtilisateur to set
 	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
 	}
 
 	/**
-	 * @return the password
+	 * @return the mdpUtilisateur
 	 */
-	public String getPassword() {
-		return password;
+	public String getMdpUtilisateur() {
+		return mdpUtilisateur;
 	}
 
 	/**
-	 * @param password
-	 *            the password to set
+	 * @param mdpUtilisateur
+	 *            the mdpUtilisateur to set
 	 */
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMdpUtilisateur(String mdpUtilisateur) {
+		this.mdpUtilisateur = mdpUtilisateur;
 	}
-
 }

@@ -11,6 +11,6 @@
 		<bean:write name="helloWorldForm" property="message" />
 	</h1>
 	
-	 <bean:message key="titre.bonjour"/> 
+	 <bean:message key="titre.bonjour"/>  <bean:write name="loginForm" property="nomUtilisateur"/> 
 </body>
 </html>

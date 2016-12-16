@@ -8,7 +8,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.adservio.tutu.form.HelloWorldForm;
+import com.adservio.tutu.form.LoginForm;
+
 /**
  * 
  * @author Skander.Bachouche
@@ -16,7 +17,6 @@ import com.adservio.tutu.form.HelloWorldForm;
  */
 public class LoginAction extends Action {
 
-	
 	/*
 	 * Constructor
 	 */
@@ -25,15 +25,24 @@ public class LoginAction extends Action {
 	 */
 	public LoginAction() {
 	}
-	
+
 	/**
 	 * overrided Execute method of Action
 	 */
-	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		HelloWorldForm helloWorldForm = (HelloWorldForm) form;
-		helloWorldForm.setMessage("Hello world");
-		return mapping.findForward("succes");
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest req,
+			HttpServletResponse res) throws Exception {
+		String resultat = null;
+		LoginForm loginForm = ((LoginForm) form);
+		String mdpUtilisateur = loginForm.getMdpUtilisateur();
+		String nomUtilisateur = loginForm.getNomUtilisateur();
+
+		if (("admin").equals(nomUtilisateur) && ("admin").equals(mdpUtilisateur)) {
+			resultat = "succes";
+		} else {
+			resultat = "echec";
+		}
+
+		return mapping.findForward(resultat);
 	}
 
 }

@@ -4,9 +4,11 @@
 <%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean"%>
 <html:html>
 <head>
-<title>this is the error : <bean:message key="titre.erreur" /></title>
+<title></title>
 </head>
 <body>
+	This is the error :
+	<bean:message key="titre.erreur" />
 	<html:errors />
 	<br />
 </body>
